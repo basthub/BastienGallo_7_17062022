@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">    
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <title>Les petits plats</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/img/logo/logo.svg" type="image/x-icon">    
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <script src="https://kit.fontawesome.com/c3001d794c.js" crossorigin="anonymous"></script>
+  <title>Les petits plats</title>
 </head>
 <body>
+  <header>
+    <a href="#" id="logo" aria-label="page d'accueil Les petits plats">
+      <img src="assets/img/logo/logo.svg" alt="logo Les petits plats" />
+        <h1 class="header__title">Les petits plats</h1>
+    </a>    
+  </header>
+  <main>
+    <div id="main-container">
+      <section id="search">
+        <div class="search__searchbar">
+          <input type="search" name="searchbar" id="searchbar" placeholder="Rechercher une recette" aria-label="rechercher une recette" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div> 
+        <div class="search__tags">
+          <div class="tag">
+            <span class="tag__title">Coco</span>
+            <button class="tag__closebtn"><i class="fa-regular fa-circle-xmark"></i></button>
+          </div>
+          <div class="tag">
+            <span class="tag__title">Poulet</span>
+            <button class="tag__closebtn"><i class="fa-regular fa-circle-xmark"></i></button>
+          </div>
+        </div>
+        <div class="search__filters">
+          <div class="filter search__filters--ingredients">
+            <span>Ingredients</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="filter search__filters--appliances">
+            <span>Appareils</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="filter search__filters--tools">
+            <span>Ustensiles</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+      </section>
+      <section id="recipes-container"></section>
+    </div>
+  </main>
+  <script type="module" src="scripts/pages/Index.js"></script>
 </body>
 </html>
