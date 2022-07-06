@@ -1,0 +1,202 @@
+main{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1240px;
+  width: 86%;
+  margin: auto;
+}
+#search {
+  .search__searchbar {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+
+    > input {
+      flex-basis: 100%;
+      background-color: $color-background;
+      height: 70px;
+      border-radius: 5px;
+      border: none;
+      font-size: $font-size-l;
+      padding: 24px 0 24px 24px;
+      &:focus{
+      outline:none;
+      }
+    }
+    > i {
+      position: relative;
+      right: 50px;
+      font-size: 32px;
+    }
+  }
+  .search__tags{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    > .tag {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 5px;
+      background-color: $color-filter-primary;
+      padding: 10px 20px;
+      > span {
+        font-size: $font-size-m;
+        font-weight: 700;
+        color: $color-white;
+        margin-right: 13px;
+      }
+      > button {
+        background: none;
+        border: none;
+        color: $color-white;
+        padding: 0;
+        cursor: pointer;
+        > i{
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .search__filters{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    column-gap: 20px;
+    padding-bottom: 25px;
+    & .filter{
+      display: flex;
+      border-radius: 5px;
+      color: $color-white;
+      font-size: $font-size-l;
+      font-weight: 700;
+      padding: 24px 15px;
+      > span{
+        margin-right: 31px;
+      }
+
+      @include mobile{
+        justify-content: space-between;
+      }
+    }
+
+    &--ingredients{
+      background-color: $color-filter-primary;
+    }
+    &--appliances{
+      background-color: $color-filter-secondary;
+    }
+    &--tools{
+      background-color: $color-filter-tertiary;
+    }
+
+    @include mobile{
+      flex-direction: column;
+      row-gap: 10px;
+      
+    }
+    @include tablet{
+      justify-content: center;
+    }
+
+
+
+  }
+
+}
+
+#recipes-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  row-gap: 50px;
+
+  > a {
+    display: flex;
+    flex-basis: 30%;
+    text-decoration: none;
+    background-color: $color-background;
+    border-radius: 5px;
+    overflow: hidden;
+    @include mobile {
+      flex-basis: 100%;
+    }
+    @include tablet {
+      flex-basis: 45%;
+    }
+
+
+    article {
+      display: flex;
+      flex-wrap: wrap;
+      flex-basis: 100%;
+      color: $color-black;
+      border-radius: 5px;
+
+      > .recipe_thumbnail{
+        background-color: $color-imgDefault;
+        border-radius: 5px 5px 0 0;
+        flex-basis: 100%;
+        width: 100%;
+        height: 178px;
+        object-fit: cover;
+      }
+      > .recipe_details{
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        height: 186px;
+        margin: 20px;
+        border-radius: 0 0 5px 5px;
+
+        div:first-child{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          flex-basis: 100%;
+          height: 22px;
+          margin-bottom: 20px;
+          h2{
+            font-weight: 400;
+            font-size: $font-size-l;
+          }
+          span{
+            font-size: $font-size-l;
+            font-weight: 700;
+          }
+        }
+        div:last-child{
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            flex-basis: 60%;
+            align-items: flex-start;
+            li{
+              font-size: $font-size-s;
+            }
+            b{
+              font-weight: bold;
+            }
+          }
+          p {
+            font-size: $font-size-s;
+            flex-basis: 40%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 12;
+            -webkit-box-orient: vertical;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "OC_P7_Les_petits_plats",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basthub/BastienGallo_7_17062022.git"
+  },
+  "author": "Bastien Gallo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/basthub/BastienGallo_7_17062022/issues"
+  },
+  "homepage": "https://github.com/basthub/BastienGallo_7_17062022#readme"
+}
