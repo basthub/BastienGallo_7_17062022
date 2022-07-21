@@ -23,34 +23,32 @@
           <input type="search" name="searchbar" id="searchbar" placeholder="Rechercher une recette" aria-label="rechercher une recette" />
           <i class="fa-solid fa-magnifying-glass"></i>
         </div> 
-        <div class="search__tags">
-          <div class="tag">
-            <span class="tag__title">Coco</span>
-            <button class="tag__closebtn"><i class="fa-regular fa-circle-xmark"></i></button>
-          </div>
-          <div class="tag">
-            <span class="tag__title">Poulet</span>
-            <button class="tag__closebtn"><i class="fa-regular fa-circle-xmark"></i></button>
-          </div>
+        <div class="search__activetags">
         </div>
         <div class="search__filters">
           <div class="filter search__filters--ingredients">
             <span>Ingredients</span>
             <i class="fa-solid fa-chevron-down"></i>
+            <input class="ingredients-input" type="text" placeholder="Rechercher un ingredient">
+            <ul class="ingredients-container"></ul>
           </div>
           <div class="filter search__filters--appliances">
             <span>Appareils</span>
             <i class="fa-solid fa-chevron-down"></i>
+            <input class="appliances-input" type="text" placeholder="Rechercher un appareil">
+            <ul class="appliances-container"></ul>
           </div>
-          <div class="filter search__filters--tools">
+          <div class="filter search__filters--ustensils">
             <span>Ustensiles</span>
             <i class="fa-solid fa-chevron-down"></i>
+            <input class="ustensils-input" type="text" placeholder="Rechercher un ustensil">
+            <ul class="ustensils-container"></ul>
           </div>
         </div>
       </section>
       <section id="recipes-container"></section>
     </div>
   </main>
-  <script type="module" src="scripts/pages/Index.js"></script>
+  <script type="module" src="scripts/app.js"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ main{
       font-size: 32px;
     }
   }
-  .search__tags{
+  .search__activetags{
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
@@ -64,19 +64,90 @@ main{
     margin-top: 15px;
     column-gap: 20px;
     padding-bottom: 25px;
+    position: absolute;
+    width: 100%;
     & .filter{
       display: flex;
+      flex-wrap: wrap;
       border-radius: 5px;
       color: $color-white;
       font-size: $font-size-l;
       font-weight: 700;
       padding: 24px 15px;
+      height: fit-content;
+      width: 10%;
+      position: relative;
+      &:hover, &:focus{
+        width: 40%;
+        span{
+          display: none;
+        }
+        input {
+          display: flex;
+        }
+
+      }
+      & > i{
+        position: absolute;
+        right: 20px;
+        top: 25px;
+      } 
+      &:first-child:hover ul > li, &:nth-child(2):hover ul > li, &:nth-child(3):hover ul > li {
+        display: flex;
+    } 
+
+
       > span{
         margin-right: 31px;
+
+      }
+      > input{
+        display: none;
+        background-color: inherit;
+        border:none ;
+        height: fit-content;
+        color: $color-white;
+        font-size: $font-size-l;
+        font-weight: 400;
+        width: 90%;
+        border: none;
+        &::placeholder{
+          color:$color-white;
+          opacity: 0.5;
+          font-weight: 400;
+          font-size: $font-size-l;
+        }
+        &:hover > ul{
+          display: flex;
+        }
+        &:focus li {
+          display: flex;
+      }
+
+      }
+      > ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        row-gap: 3px;
+        column-gap: 20px;
+        > li{
+          display: none;
+          font-weight: 400;
+          flex-basis: 25%;
+          margin: 5px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
 
       @include mobile{
         justify-content: space-between;
+        width: 100%;
+        &:hover{
+          width: 100%;
+        }
       }
     }
 
@@ -86,7 +157,7 @@ main{
     &--appliances{
       background-color: $color-filter-secondary;
     }
-    &--tools{
+    &--ustensils{
       background-color: $color-filter-tertiary;
     }
 
@@ -113,6 +184,7 @@ main{
   flex-wrap: wrap;
   flex-basis: 100%;
   row-gap: 50px;
+  margin-top: 120px;
 
   > a {
     display: flex;

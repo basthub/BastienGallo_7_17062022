@@ -1,12 +1,15 @@
-class RecipeCard {
+  import {ingredientsTags, appliancesTags, ustensilsTags} from '../pages/Index.js'
+  class RecipeCard {
   constructor(recipe){
     this.recipe = recipe
   }
 
   render(){
     let recipeImg =`<img src="#" alt="Photo de la recette ${this.recipe.name}" class="recipe__preview" />`
-    let ingredients = this.recipe.ingredients
+    let ingredients = this.recipe.ingredients // for recipecard + refacto Tags
     let ingredientsList = ''
+    let appliance = this.recipe.appliance // refacto Tags
+    let ustensils = this.recipe.ustensils // refacto Tags
     
     ingredients.forEach(ingredient => {
       let unit = ''
@@ -20,6 +23,24 @@ class RecipeCard {
       ingredientsList += `<li><b>${ingredient.ingredient}</b>${quantity} ${unit}</li>`
       });
 
+      //refactoriser dans Tags.js
+      ingredients.forEach(ingredientSelected => {
+        if (ingredientsTags.indexOf(ingredientSelected.ingredient) === -1) {
+          ingredientsTags.push(ingredientSelected.ingredient)
+        } 
+      })
+      
+        if (appliancesTags.indexOf(appliance) === -1) {
+          appliancesTags.push(appliance)
+        }
+      
+      ustensils.forEach(ustensil => {
+        if (ustensilsTags.indexOf(ustensil) === -1){
+          ustensilsTags.push(ustensil)
+        }
+      })
+      //********//
+
     return `
     <a href='#'> 
       <article class="recipe">
@@ -32,10 +53,8 @@ class RecipeCard {
             <span><i class="fa-regular fa-clock"></i> ${this.recipe.time} min</span>
           </div>
           <div>
-            <ul>
-              ${ingredientsList}
-            </ul>
-              <p>${this.recipe.description}</p>
+            <ul>${ingredientsList}</ul>
+            <p>${this.recipe.description}</p>
           </div>    
       </article>
     </a>
