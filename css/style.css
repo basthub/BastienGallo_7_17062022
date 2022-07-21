@@ -96,12 +96,12 @@ main {
   right: 50px;
   font-size: 32px;
 }
-#search .search__tags {
+#search .search__activetags {
   display: flex;
   flex-wrap: wrap;
   column-gap: 20px;
 }
-#search .search__tags > .tag {
+#search .search__activetags > .tag {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -109,20 +109,20 @@ main {
   background-color: #3282F7;
   padding: 10px 20px;
 }
-#search .search__tags > .tag > span {
+#search .search__activetags > .tag > span {
   font-size: 14px;
   font-weight: 700;
   color: #fff;
   margin-right: 13px;
 }
-#search .search__tags > .tag > button {
+#search .search__activetags > .tag > button {
   background: none;
   border: none;
   color: #fff;
   padding: 0;
   cursor: pointer;
 }
-#search .search__tags > .tag > button > i {
+#search .search__activetags > .tag > button > i {
   font-size: 20px;
 }
 #search .search__filters {
@@ -131,21 +131,87 @@ main {
   margin-top: 15px;
   column-gap: 20px;
   padding-bottom: 25px;
+  position: absolute;
+  width: 100%;
 }
 #search .search__filters .filter {
   display: flex;
+  flex-wrap: wrap;
   border-radius: 5px;
   color: #fff;
   font-size: 18px;
   font-weight: 700;
   padding: 24px 15px;
+  height: fit-content;
+  width: 10%;
+  position: relative;
+}
+#search .search__filters .filter:hover, #search .search__filters .filter:focus {
+  width: 40%;
+}
+#search .search__filters .filter:hover span, #search .search__filters .filter:focus span {
+  display: none;
+}
+#search .search__filters .filter:hover input, #search .search__filters .filter:focus input {
+  display: flex;
+}
+#search .search__filters .filter > i {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+}
+#search .search__filters .filter:first-child:hover ul > li, #search .search__filters .filter:nth-child(2):hover ul > li, #search .search__filters .filter:nth-child(3):hover ul > li {
+  display: flex;
 }
 #search .search__filters .filter > span {
   margin-right: 31px;
 }
+#search .search__filters .filter > input {
+  display: none;
+  background-color: inherit;
+  border: none;
+  height: fit-content;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  width: 90%;
+  border: none;
+}
+#search .search__filters .filter > input::placeholder {
+  color: #fff;
+  opacity: 0.5;
+  font-weight: 400;
+  font-size: 18px;
+}
+#search .search__filters .filter > input:hover > ul {
+  display: flex;
+}
+#search .search__filters .filter > input:focus li {
+  display: flex;
+}
+#search .search__filters .filter > ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  row-gap: 3px;
+  column-gap: 20px;
+}
+#search .search__filters .filter > ul > li {
+  display: none;
+  font-weight: 400;
+  flex-basis: 25%;
+  margin: 5px;
+}
+#search .search__filters .filter > ul > li:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 768px) {
   #search .search__filters .filter {
     justify-content: space-between;
+    width: 100%;
+  }
+  #search .search__filters .filter:hover {
+    width: 100%;
   }
 }
 #search .search__filters--ingredients {
@@ -154,7 +220,7 @@ main {
 #search .search__filters--appliances {
   background-color: #68D9A4;
 }
-#search .search__filters--tools {
+#search .search__filters--ustensils {
   background-color: #ED6454;
 }
 @media screen and (max-width: 768px) {
@@ -177,6 +243,7 @@ main {
   flex-wrap: wrap;
   flex-basis: 100%;
   row-gap: 50px;
+  margin-top: 120px;
 }
 #recipes-container > a {
   display: flex;
