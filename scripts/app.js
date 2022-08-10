@@ -1,6 +1,3 @@
-import {init} from "./pages/Index.js";
-
-
-
+import { init } from './pages/Index.js'
 
 init()

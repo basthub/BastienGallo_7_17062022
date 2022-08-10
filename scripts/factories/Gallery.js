@@ -1,20 +1,31 @@
-import RecipeCard from "./RecipeFactory.js";
+import RecipeCard from './RecipeCard.js'
 
 class Gallery {
-  constructor(recipe) {
+  constructor (recipe, filteredRecipe) {
     this.recipe = recipe
-
-    this.filteredRecipe = this.recipe.filter(recipe => recipe.id <= 50)
+    this.filteredRecipe = filteredRecipe
   }
 
-  render () {
-    const gallery = document.querySelector('#recipes-container')
-    gallery.innerHTML = ''
+  render (recipesArray) {
+    const galleryContainer = document.querySelector('#recipes-container')
+    if (recipesArray.length === 0) {
+      const errorMessage =
+      `
+        <p class="noresultmessage">Aucune recette ne correspond à votre critère... vous pouvez
+        chercher « tarte aux pommes », « poisson », etc.</p>
+      `
+      galleryContainer.innerHTML = errorMessage
+    } else {
+      recipesArray.forEach(recipe => {
+        const recipesCards = new RecipeCard(recipe)
+        galleryContainer.innerHTML += recipesCards.render()
+      })
+    }
+  }
 
-    this.filteredRecipe.forEach((recipe) => {
-      const recipesCard = new RecipeCard(recipe)
-      gallery.innerHTML += recipesCard.render()
-    });
+  clear () {
+    const galleryContainer = document.querySelector('#recipes-container')
+    galleryContainer.innerHTML = ''
   }
 }
 

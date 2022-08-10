@@ -106,7 +106,6 @@ main {
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  background-color: #3282F7;
   padding: 10px 20px;
 }
 #search .search__activetags > .tag > span {
@@ -145,6 +144,7 @@ main {
   height: fit-content;
   width: 10%;
   position: relative;
+  min-width: 120px;
 }
 #search .search__filters .filter:hover, #search .search__filters .filter:focus {
   width: 40%;
@@ -207,11 +207,12 @@ main {
 }
 @media screen and (max-width: 768px) {
   #search .search__filters .filter {
+    right: auto;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
   }
   #search .search__filters .filter:hover {
-    width: 100%;
+    width: 80%;
   }
 }
 #search .search__filters--ingredients {
@@ -227,22 +228,26 @@ main {
   #search .search__filters {
     flex-direction: column;
     row-gap: 10px;
+    right: auto;
+    position: relative;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
   #search .search__filters {
+    right: 0;
     justify-content: center;
   }
 }
 
 #recipes-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   flex-basis: 100%;
   row-gap: 50px;
+  column-gap: 50px;
   margin-top: 120px;
 }
 #recipes-container > a {
@@ -297,6 +302,7 @@ main {
 #recipes-container > a article > .recipe_details div:first-child h2 {
   font-weight: 400;
   font-size: 18px;
+  max-width: 65%;
 }
 #recipes-container > a article > .recipe_details div:first-child span {
   font-size: 18px;
