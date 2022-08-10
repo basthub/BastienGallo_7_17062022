@@ -38,7 +38,6 @@ main{
       justify-content: space-between;
       align-items: center;
       border-radius: 5px;
-      background-color: $color-filter-primary;
       padding: 10px 20px;
       > span {
         font-size: $font-size-m;
@@ -77,6 +76,7 @@ main{
       height: fit-content;
       width: 10%;
       position: relative;
+      min-width: 120px;
       &:hover, &:focus{
         width: 40%;
         span{
@@ -143,10 +143,11 @@ main{
       }
 
       @include mobile{
+        right: auto;
         justify-content: space-between;
-        width: 100%;
+        width: 80%;
         &:hover{
-          width: 100%;
+          width: 80%;
         }
       }
     }
@@ -164,9 +165,12 @@ main{
     @include mobile{
       flex-direction: column;
       row-gap: 10px;
+      right: auto;
+      position: relative;
       
     }
     @include tablet{
+      right : 0;
       justify-content: center;
     }
 
@@ -178,12 +182,13 @@ main{
 
 #recipes-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   flex-basis: 100%;
   row-gap: 50px;
+  column-gap: 50px;
   margin-top: 120px;
 
   > a {
@@ -234,6 +239,7 @@ main{
           h2{
             font-weight: 400;
             font-size: $font-size-l;
+            max-width: 65%;
           }
           span{
             font-size: $font-size-l;

@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/basthub/BastienGallo_7_17062022/issues"
   },
-  "homepage": "https://github.com/basthub/BastienGallo_7_17062022#readme"
+  "homepage": "https://github.com/basthub/BastienGallo_7_17062022#readme",
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0"
+  }
 }
